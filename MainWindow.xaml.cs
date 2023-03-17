@@ -22,16 +22,16 @@ namespace WpfTutorialSamples.Rich_text_controls
 
 		private void rtbEditor_SelectionChanged(object sender, RoutedEventArgs e)
 		{
-			object temp = rtbEditor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+			object temp = rtbErditor.Selection.GetPropertyValue(Inline.FontWeightProperty);
 			btnBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
-			temp = rtbEditor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+			temp = rtbErditor.Selection.GetPropertyValue(Inline.FontStyleProperty);
 			btnItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
-			temp = rtbEditor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+			temp = rtbErditor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
 			btnUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
 
-			temp = rtbEditor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+			temp = rtbErditor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
 			cmbFontFamily.SelectedItem = temp;
-			temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+			temp = rtbErditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
 			cmbFontSize.Text = temp.ToString();
 		}
 
@@ -42,7 +42,7 @@ namespace WpfTutorialSamples.Rich_text_controls
 			if(dlg.ShowDialog() == true)
 			{
 				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
-				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				TextRange range = new TextRange(rtbErditor.Document.ContentStart, rtbErditor.Document.ContentEnd);
 				range.Load(fileStream, DataFormats.Rtf);
 			}
 		}
@@ -54,7 +54,7 @@ namespace WpfTutorialSamples.Rich_text_controls
 			if(dlg.ShowDialog() == true)
 			{
 				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create);
-				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				TextRange range = new TextRange(rtbErditor.Document.ContentStart, rtbErditor.Document.ContentEnd);
 				range.Save(fileStream, DataFormats.Rtf);
 			}
 		}
@@ -62,12 +62,12 @@ namespace WpfTutorialSamples.Rich_text_controls
 		private void cmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if(cmbFontFamily.SelectedItem != null)
-				rtbEditor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmbFontFamily.SelectedItem);
+				rtbErditor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmbFontFamily.SelectedItem);
 		}
 
 		private void cmbFontSize_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			rtbEditor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.Text);
+			rtbErditor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.Text);
 		}
 
 		private void fontcolor()
@@ -76,7 +76,7 @@ namespace WpfTutorialSamples.Rich_text_controls
 			if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
 				var wpfcolor = Color.FromArgb(colorDialog.Color.A, colorDialog.Color.R, colorDialog.Color.G, colorDialog.Color.B);
-				TextRange range = new TextRange(rtbEditor.Selection.Start, rtbEditor.Selection.End);
+				TextRange range = new TextRange(rtbErditor.Selection.Start, rtbErditor.Selection.End);
 				range.ApplyPropertyValue(FlowDocument.ForegroundProperty, new SolidColorBrush(wpfcolor));
 			}
 		}
@@ -101,7 +101,7 @@ namespace WpfTutorialSamples.Rich_text_controls
 			if (dlg.ShowDialog() == true)
 			{
 				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
-				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				TextRange range = new TextRange(rtbErditor.Document.ContentStart, rtbErditor.Document.ContentEnd);
 				range.Load(fileStream, DataFormats.Rtf);
 			}
 		}
@@ -113,7 +113,7 @@ namespace WpfTutorialSamples.Rich_text_controls
 			if (dlg.ShowDialog() == true)
 			{
 				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create);
-				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				TextRange range = new TextRange(rtbErditor.Document.ContentStart, rtbErditor.Document.ContentEnd);
 				range.Save(fileStream, DataFormats.Rtf);
 			}
 		}
@@ -121,6 +121,17 @@ namespace WpfTutorialSamples.Rich_text_controls
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
 			this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            object p = rtbErditor.Paragraph.LineHeight++;
+
+		}
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

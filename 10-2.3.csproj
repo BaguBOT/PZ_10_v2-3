@@ -119,5 +119,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="free-icon-line-adjustment-7911098.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="free-icon-line-spacing-adjustment-7911090.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
