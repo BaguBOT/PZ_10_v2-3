@@ -1,15 +1,17 @@
 ﻿<Window x:Class="WpfTutorialSamples.Rich_text_controls.RichTextEditorSample"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="RichTextEditorSample" Height="454" Width="495">
+        Title="RichTextEditorSample" Height="454" Width="589">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
         <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
     </Window.CommandBindings>
+
     <DockPanel Background="#FF74C2FF">
+
         <ToolBar DockPanel.Dock="Top" Background="#FF74C2FF">
             <Menu Background="#FF74C2FF">
-                <MenuItem Header="Файл" Width="54" Click="MenuItem_Click" IsEnabled="True" Background="#FF74C2FF" FontSize="16" FontFamily="Times New Roman" FontWeight="Normal" FontStyle="Normal">
+                <MenuItem Header="Файл" Width="54" Click="MenuItem_Click" IsEnabled="True" Background="#FF74C2FF" FontSize="16" FontFamily="Times New Roman" FontWeight="Normal" FontStyle="Normal" Height="29">
 
                     <MenuItem Header="Открыть файл" Click="MenuItem_Click_5"  />
                     <MenuItem Header="Сохранить" Click="MenuItem_Click_6" />
@@ -18,48 +20,54 @@
                 </MenuItem>
             </Menu>
             <Separator />
-            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
-                <ToggleButton.Background>
-                    <ImageBrush ImageSource="icons8-жирный-50.png"/>
-                </ToggleButton.Background>
-                <Image Width="16" Height="16" />
-                <ToggleButton.ToolTip>
-                    <ToolTip>
-                        ЖирныйШрифт
-                    </ToolTip>
-                </ToggleButton.ToolTip>
-            </ToggleButton>
-            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
-                <ToggleButton.Background>
-                    <ImageBrush ImageSource="icons8-курсив-32.png"/>
-                </ToggleButton.Background>
-                <Image  Width="16" Height="16" >
-                    <Image.OpacityMask>
-                        <ImageBrush ImageSource="icons8-курсив-32.png" TileMode="None" Stretch="None"/>
-                    </Image.OpacityMask>
-                </Image>
-                <ToggleButton.ToolTip>
-                    <ToolTip>
-                        Курсив
-                    </ToolTip>
-                </ToggleButton.ToolTip>
-            </ToggleButton>
-            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
-                <ToggleButton.Background>
-                    <ImageBrush ImageSource="icons8-цвет-текста-24.png"/>
-                </ToggleButton.Background>
-                <Image Width="16" Height="16" />
-                <ToggleButton.ToolTip>
-                    <ToolTip>
-                        Подчёркивание
-                    </ToolTip>
-                </ToggleButton.ToolTip>
-            </ToggleButton>
+            <StackPanel Orientation="Horizontal">
+                <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="icons8-жирный-50.png"/>
+                    </ToggleButton.Background>
+                    <Image Width="30" Height="25" >
+                        <Image.OpacityMask>
+                            <SolidColorBrush Color="#00A45555" Opacity="0"/>
+                        </Image.OpacityMask>
+                    </Image>
+                    <ToggleButton.ToolTip>
+                        <ToolTip>
+                            ЖирныйШрифт
+                        </ToolTip>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+                <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="icons8-курсив-32.png"/>
+                    </ToggleButton.Background>
+                    <Image  Width="30" Height="25" >
+                        <Image.OpacityMask>
+                            <ImageBrush ImageSource="icons8-курсив-32.png" TileMode="None" Stretch="None"/>
+                        </Image.OpacityMask>
+                    </Image>
+                    <ToggleButton.ToolTip>
+                        <ToolTip>
+                            Курсив
+                        </ToolTip>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+                <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="icons8-цвет-текста-24.png"/>
+                    </ToggleButton.Background>
+                    <Image Width="30" Height="25" />
+                    <ToggleButton.ToolTip>
+                        <ToolTip>
+                            Подчёркивание
+                        </ToolTip>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            </StackPanel>
             <Separator />
-            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" />
-            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
+            <ComboBox Name="cmbFontFamily" Width="156" SelectionChanged="cmbFontFamily_SelectionChanged" Height="25" />
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" Height="25" />
             <Separator />
-            <Button Content="" VerticalAlignment="Stretch" Width="30" Click="Button_Click">
+            <Button Content="" VerticalAlignment="Stretch" Width="30" Click="Button_Click" Height="25">
                 <Button.Background>
                     <ImageBrush ImageSource="icons8-палитра-30.png"/>
                 </Button.Background>
@@ -69,8 +77,8 @@
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            
-           
+
+
 
         </ToolBar>
         <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" Height="408" Background="#FFECDFC3" FontFamily="Times New Roman" FontSize="16" />
@@ -81,6 +89,7 @@
                 </Style>
             </RichTextBox.Resources>
         </RichTextBox>
+
     </DockPanel>
 
 </Window>

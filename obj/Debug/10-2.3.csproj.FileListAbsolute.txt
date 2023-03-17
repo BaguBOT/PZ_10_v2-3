@@ -1,0 +1,15 @@
+d:\users\is13096\Desktop\Новая папка (2)\bin\Debug\10-2.3.exe.config
+d:\users\is13096\Desktop\Новая папка (2)\bin\Debug\10-2.3.exe
+d:\users\is13096\Desktop\Новая папка (2)\bin\Debug\10-2.3.pdb
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.csproj.AssemblyReference.cache
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.csproj.SuggestedBindingRedirects.cache
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\MainWindow.baml
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\MainWindow.g.cs
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\App.g.cs
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3_MarkupCompile.cache
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.g.resources
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\_10_2._3.Properties.Resources.resources
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.csproj.GenerateResource.cache
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.csproj.CoreCompileInputs.cache
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.exe
+d:\users\is13096\Desktop\Новая папка (2)\obj\Debug\10-2.3.pdb
