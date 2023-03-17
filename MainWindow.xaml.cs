@@ -94,39 +94,35 @@ namespace WpfTutorialSamples.Rich_text_controls
 
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
-
-        }
+			OpenFileDialog dlg = new OpenFileDialog();
+			dlg.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+			if (dlg.ShowDialog() == true)
+			{
+				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
+				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				range.Load(fileStream, DataFormats.Rtf);
+			}
+		}
 
         private void MenuItem_Click_6(object sender, RoutedEventArgs e)
         {
-
-        }
+			SaveFileDialog dlg = new SaveFileDialog();
+			dlg.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+			if (dlg.ShowDialog() == true)
+			{
+				FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create);
+				TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+				range.Save(fileStream, DataFormats.Rtf);
+			}
+		}
 
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
-
+			this.Close();
         }
     }
+
+        
 }
